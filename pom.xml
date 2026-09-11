@@ -13,9 +13,9 @@
         <maven.compiler.source>25</maven.compiler.source>
         <maven.compiler.target>25</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <selenium.version>4.45.0</selenium.version>
-        <testng.version>7.12.0</testng.version>
-        <playwright.version>1.61.0</playwright.version>
+        <selenium.version>LATEST</selenium.version>
+        <testng.version>LATEST</testng.version>
+        <playwright.version>LATEST</playwright.version>
     </properties>
 
     <!-- KHAI BÁO THƯ VIỆN-->

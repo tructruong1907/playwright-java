@@ -99,6 +99,30 @@ public class Selenium_03_Locator {
         int textboxSize = driver.findElements(By.xpath("//input")).size();
         System.out.println(textboxSize);
     }
+    @Test
+    public void TC_09_Xpath_Text(){
+        driver.get("https://automationfc.github.io/basic-form/");
+
+        //Text()
+        driver.findElement(By.xpath("//label[text()='First Name']"));
+        driver.findElement(By.xpath("//label[text()='Last Name']"));
+
+        //contains text()
+        driver.findElement(By.xpath("//h5[contains(text(),'Hello World!')]"));
+
+        //contains string()
+        driver.findElement(By.xpath("//h5[contains(string(),'Viet Nam')]"));
+    }
+    @Test
+    public void TC_10_Xpath_AndOr(){
+        driver.get("https://live.techpanda.org/index.php/customer/account/create/");
+
+        //And
+        driver.findElement(By.xpath("//span[@class='label' and text()='Account']"));
+        //Or
+        driver.findElement(By.xpath("//input[@type='password' or name='password']"));
+
+    }
     @AfterClass //gắn chỉ dẫn
     //Đóng trình duyệt
     public void closeBrowser(){

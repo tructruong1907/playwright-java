@@ -20,7 +20,7 @@ public class Topic_01_DataType {
     boolean status = true;
 
     //Character
-    char c = 'C';
+    char ca = 'C';
 
     //Tham chiếu (Reference Type) - Khi khởi tạo/gán dữ liệu -> sử dụng lại vùng dữ liệu
     //String
