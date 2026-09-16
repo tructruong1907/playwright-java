@@ -70,6 +70,71 @@ public class Selenium_04_Ex_Commands_02 {
         Assert.assertFalse(driver.findElement(By.cssSelector("input[id='marketing_newsletter']")).isSelected());
         sleep(3000);
 
+        //clear info
+        passwordTextbox.clear();
+
+        //validate password - only uppercase
+        passwordTextbox.sendKeys("ABC");
+        passwordTextbox.sendKeys(Keys.ENTER);
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.lowercase-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.uppercase-char.completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.special-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li[@class='8-char not-completed']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li[@class='username-check completed']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("button#create-account-enabled")).isEnabled());
+        Assert.assertFalse(driver.findElement(By.cssSelector("input[id='marketing_newsletter']")).isSelected());
+        sleep(3000);
+
+        //clear info
+        passwordTextbox.clear();
+
+        //validate password - special-char
+        passwordTextbox.sendKeys("!@##");
+        passwordTextbox.sendKeys(Keys.ENTER);
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.lowercase-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.uppercase-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.special-char.completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li[@class='8-char not-completed']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li[@class='username-check completed']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("button#create-account-enabled")).isEnabled());
+        Assert.assertFalse(driver.findElement(By.cssSelector("input[id='marketing_newsletter']")).isSelected());
+        sleep(3000);
+
+        //clear info
+        passwordTextbox.clear();
+
+        //validate password - 8-char
+        passwordTextbox.sendKeys("m1234567");
+        passwordTextbox.sendKeys(Keys.ENTER);
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.lowercase-char.completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.uppercase-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.special-char.not-completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li[@class='8-char completed']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li[@class='username-check completed']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("button#create-account-enabled")).isEnabled());
+        Assert.assertFalse(driver.findElement(By.cssSelector("input[id='marketing_newsletter']")).isSelected());
+        sleep(3000);
+
+        //clear info
+        passwordTextbox.clear();
+
+        //validate password - FULL
+        passwordTextbox.sendKeys("Tructruong@123");
+        passwordTextbox.sendKeys(Keys.ENTER);
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.lowercase-char.completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.uppercase-char.completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.number-char.completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("li.special-char.completed")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li[@class='8-char completed']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.xpath("//li[@class='username-check completed']")).isDisplayed());
+        Assert.assertTrue(driver.findElement(By.cssSelector("button#create-account-enabled")).isEnabled());
+        Assert.assertFalse(driver.findElement(By.cssSelector("input[id='marketing_newsletter']")).isSelected());
+        sleep(3000);
+
+
     }
     @Test
     public void TC_02_(){
