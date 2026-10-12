@@ -25,7 +25,7 @@ public class Selenium_04_Commands {
 
     }
     @Test
-    public void TC_02_WebElemt(){
+    public void TC_02_WebElement(){
         //Element
         WebElement webelement = driver.findElement(By.cssSelector(""));
         //click
