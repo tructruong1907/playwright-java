@@ -14,7 +14,9 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-public class Selenium_09_Default_Checkbox {
+import static java.lang.Thread.sleep;
+
+public class Selenium_09_Default_Checkbox_Radio {
     WebDriver driver;
 
     @BeforeClass //gắn chỉ dẫn
@@ -95,6 +97,34 @@ public class Selenium_09_Default_Checkbox {
         //
 
     }
+
+    @Test
+    public void TC_03_Radio() throws InterruptedException {
+        driver.get("https://demos.telerik.com/kendo-ui/radiobutton/index");
+
+        //By petroRadio14 = By.xpath("//label[text()='1.4 Petrol, 92kW']/preceding-sibling::span/input");
+        By petroRadio16 = By.xpath("//label[text()='1.6 Diesel, 77kW']/preceding-sibling::span/input");
+        By petroRadio18 = By.xpath("//label[text()='1.8 Petrol, 118kW']/preceding-sibling::span/input");
+
+        //Chọn
+        if(!driver.findElement(petroRadio16).isSelected()){
+            driver.findElement(petroRadio16).click();
+        }
+        sleep(3000);
+
+        //Verify
+        Assert.assertTrue(driver.findElement(petroRadio16 ).isSelected());
+
+        //Bỏ chọn (chọn qua item khác để bỏ chọn item cũ)
+        if(!driver.findElement(petroRadio18).isSelected()){
+            driver.findElement(petroRadio18).click();
+        }
+        sleep(3000);
+        Assert.assertTrue(driver.findElement(petroRadio18).isSelected());
+        Assert.assertFalse(driver.findElement(petroRadio16 ).isSelected());
+    }
+
+
     @AfterClass //gắn chỉ dẫn
     //Đóng trình duyệt
     public void closeBrowser(){
